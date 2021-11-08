@@ -9,3 +9,9 @@
 .title{
     font-size :
 }
+.mostrar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}
