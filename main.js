@@ -2,6 +2,7 @@ var user = {
     username: ["Luis", "Marcel", "Juan", "Gonzalo"],
     score: ["28", "23", "25", "33"]
 }
+var startTime = "";
 
 window.onload = function() {
     var user1 = document.getElementById("user1");
@@ -18,8 +19,8 @@ window.onload = function() {
                 img.setAttribute("style", "position:absolute;");
                 document.body.appendChild(img);
                 var xy = getRandomPosition(img);
-                img.style.top = xy[0] + 'px';
-                img.style.left = xy[1] + 'px';
+                img.style.top = xy[0] + '%';
+                img.style.left = xy[1] + '%';
 
     user1.innerHTML = user.username[i];
     score1.innerHTML = user.score[i];
@@ -71,6 +72,8 @@ function finishButton(time){
         page3.className = "ocultar";
         page4.className = "mostrar";
         left.className = "ocultar";
+        startTime = new Date;
+
     }, time);
 }
 
@@ -86,10 +89,10 @@ function getRandomTime(min, max){
 }
 
 function getRandomPosition(element) {
-	var x = document.body.offsetHeight-element.clientHeight;
-	var y = document.body.offsetWidth-element.clientWidth;
-	var randomX = Math.floor(Math.random()*x);
-	var randomY = Math.floor(Math.random()*y);
+	// var x = document.body.offsetHeight-element.clientHeight;
+	// var y = document.body.offsetWidth-element.clientWidth;
+	var randomX = Math.floor(Math.random()*100);
+	var randomY = Math.floor(Math.random()*100);
 	return [randomX,randomY];
 }
 
