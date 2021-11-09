@@ -3,6 +3,8 @@ var user = {
     score: ["28", "23", "25", "33"]
 }
 var startTime = "";
+var finishTime = "";
+var score = "";
 
 window.onload = function() {
     var user1 = document.getElementById("user1");
@@ -64,34 +66,43 @@ function startGame(){
 
 }
 
-//Marcel 
 
 const Botonrandom = document.getElementById("Botonrandom");
-Botonrandom.addEventListener("click", launchtGame);
+Botonrandom.addEventListener("click", launchGame);
 
-function launchtGame(){
-    const page3 = document.getElementById("page3");
-    const page4 = document.getElementById("page4");
-    page4.className = "ocultar";
-    page5.className = "mostrar";
-    let randomTime = getRandomTime(1, 10);
-    
-
-}
 
 
 function finishButton(time){
     timeout = setTimeout(function() {
         const page3 = document.getElementById("page3");
         const page4 = document.getElementById("page4");
+        
         page3.className = "ocultar";
         page4.className = "mostrar";
         left.className = "ocultar";
         startTime = new Date;
-
     }, time);
 }
 
+function launchGame(){
+    const page4 = document.getElementById("page4");
+    const page5 = document.getElementById("page5");
+
+    page4.className = "ocultar";
+    page5.className = "mostrar";
+    finishTime = new Date;
+    var f1 = finishTime.getSeconds();
+    var f2 = finishTime.getMilliseconds();
+    var ft = f1 + "." + f2;
+    var s1 = startTime.getSeconds();
+    var s2 = startTime.getMilliseconds();
+    var st = s1 + "." + s2;
+    score = (parseFloat(ft) - parseFloat(st)).toFixed(3);
+    console.log(ft);
+    console.log(st);
+    console.log(score);
+
+}
 
 
 /* get random time to display the page "get ready..."*/
