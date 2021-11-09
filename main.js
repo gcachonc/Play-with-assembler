@@ -36,11 +36,12 @@ window.onload = function() {
 
 const userButton = document.getElementById("userButton");
 userButton.addEventListener("click", guardarUsuario);
+var userName = "";
 
 function guardarUsuario(){
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
-    var userName = document.querySelector("#txtName").value;
+     userName = document.querySelector("#txtName").value;
 
     user.username.push(document.getElementById("txtName").value);
     page1.className = "ocultar";
@@ -66,15 +67,16 @@ function startGame(){
 //Marcel 
 
 const Botonrandom = document.getElementById("Botonrandom");
-Botonrandom.addEventListener("click", launchtGame);
+Botonrandom.addEventListener("click", launchGame);
 
-function launchtGame(){
+
+function launchGame(){
     const page3 = document.getElementById("page3");
     const page4 = document.getElementById("page4");
     page4.className = "ocultar";
     page5.className = "mostrar";
+    document.querySelector("#Time").innerHTML = userName + " ,your time is... ";
     let randomTime = getRandomTime(1, 10);
-    
 
 }
 
