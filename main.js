@@ -51,6 +51,27 @@ function startGame(){
 
     page2.className = "ocultar";
     page3.className = "mostrar";
+    let randomTime = getRandomTime(1, 10);
+    finishButton(randomTime);
 
+}
+
+function finishButton(time){
+    timeout = setTimeout(function() {
+        const page3 = document.getElementById("page3");
+        const page4 = document.getElementById("page4");
+    
+        page3.className = "ocultar";
+        page4.className = "mostrar";
+    }, time);
+
+}
+
+/* get random time to display the page "get ready..."*/
+
+function getRandomTime(min, max){
+    let result = Math.floor((Math.random() * max) + min);
+    result = result * 1000;
+    return result;
 }
 
