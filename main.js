@@ -24,6 +24,7 @@ window.onload = function() {
     score4.innerHTML = user.score[i - 3];
 
 
+
 }
 
 const userButton = document.getElementById("userButton");
@@ -48,23 +49,38 @@ startButton.addEventListener("click", startGame);
 function startGame(){
     const page2 = document.getElementById("page2");
     const page3 = document.getElementById("page3");
-
     page2.className = "ocultar";
     page3.className = "mostrar";
     let randomTime = getRandomTime(1, 10);
     finishButton(randomTime);
 
+    var img = document.createElement('img');
+                img.setAttribute("style", "position:absolute;");
+                img.setAttribute("src", "/images/finger.png");
+                document.body.appendChild(img);
+                var xy = getRandomPosition(img);
+                img.style.top = xy[0] + 'px';
+                img.style.left = xy[1] + 'px';
+
 }
+
+function getRandomPosition(element) {
+	var x = document.body.offsetHeight-element.clientHeight;
+	var y = document.body.offsetWidth-element.clientWidth;
+	var randomX = Math.floor(Math.random()*x);
+	var randomY = Math.floor(Math.random()*y);
+	return [randomX,randomY];
+}
+
+
 
 function finishButton(time){
     timeout = setTimeout(function() {
         const page3 = document.getElementById("page3");
         const page4 = document.getElementById("page4");
-    
         page3.className = "ocultar";
         page4.className = "mostrar";
     }, time);
-
 }
 
 /* get random time to display the page "get ready..."*/
@@ -73,5 +89,9 @@ function getRandomTime(min, max){
     let result = Math.floor((Math.random() * max) + min);
     result = result * 1000;
     return result;
+    
 }
+
+
+
 
