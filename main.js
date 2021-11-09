@@ -15,7 +15,7 @@ window.onload = function() {
     var i = user.username.length - 1;
 
         var img = document.getElementById ("page4");
-                img.setAttribute("style", "position:static;");
+                img.setAttribute("style", "position:absolute;");
                 document.body.appendChild(img);
                 var xy = getRandomPosition(img);
                 img.style.top = xy[0] + 'px';
