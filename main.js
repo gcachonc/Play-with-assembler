@@ -39,11 +39,12 @@ window.onload = function() {
 
 const userButton = document.getElementById("userButton");
 userButton.addEventListener("click", guardarUsuario);
+var userName = "";
 
 function guardarUsuario(){
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
-    var userName = document.querySelector("#txtName").value;
+     userName = document.querySelector("#txtName").value;
 
     user.username.push(document.getElementById("txtName").value);
     page1.className = "ocultar";
@@ -98,6 +99,7 @@ function launchGame(){
     var s2 = startTime.getMilliseconds();
     var st = s1 + "." + s2;
     score = (parseFloat(ft) - parseFloat(st)).toFixed(3);
+    document.querySelector("#Time").innerHTML = userName + " ,your time is... " + score;
     console.log(ft);
     console.log(st);
     console.log(score);
