@@ -88,9 +88,11 @@ function finishButton(time){
 function launchGame(){
     const page4 = document.getElementById("page4");
     const page5 = document.getElementById("page5");
+    const left = document.getElementById("left");
 
     page4.className = "ocultar";
     page5.className = "mostrar";
+    left.className = "mostrar";
     finishTime = new Date;
     var f1 = finishTime.getSeconds();
     var f2 = finishTime.getMilliseconds();
