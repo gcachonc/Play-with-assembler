@@ -63,6 +63,21 @@ function startGame(){
 
 }
 
+//Marcel 
+
+const Botonrandom = document.getElementById("Botonrandom");
+Botonrandom.addEventListener("click", launchtGame);
+
+function launchtGame(){
+    const page3 = document.getElementById("page3");
+    const page4 = document.getElementById("page4");
+    page4.className = "ocultar";
+    page5.className = "mostrar";
+    let randomTime = getRandomTime(1, 10);
+    
+
+}
+
 
 function finishButton(time){
     timeout = setTimeout(function() {
