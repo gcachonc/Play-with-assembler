@@ -15,7 +15,7 @@ window.onload = function() {
     var i = user.username.length - 1;
 
         var img = document.getElementById ("page4");
-                img.setAttribute("style", "position:absolute;");
+                img.setAttribute("style", "position:static;");
                 document.body.appendChild(img);
                 var xy = getRandomPosition(img);
                 img.style.top = xy[0] + 'px';
@@ -46,7 +46,7 @@ function guardarUsuario(){
     page1.className = "ocultar";
     page2.className = "mostrar";
     console.log(user.username);
-    document.querySelector("#response").innerHTML = "Hello 👋 " +  userName +" these are the rules... ";
+    document.querySelector("#response").innerHTML = "Hello 👋 " +  userName;
 
 }
 
@@ -70,6 +70,7 @@ function finishButton(time){
         const page4 = document.getElementById("page4");
         page3.className = "ocultar";
         page4.className = "mostrar";
+        left.className = "ocultar";
     }, time);
 }
 
