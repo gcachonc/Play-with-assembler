@@ -20,14 +20,16 @@
         <h2 id = "user4"></h2>
         <p id = "score4"></p>
     </div>
-    <section class = "mostrar">
-        <form action="" onsubmit="e.preventDefault()" class = "startPage">
+    <section id = "page1" class = "mostrar">
+        <form action="" onsubmit="event.preventDefault()" class = "startPage">
             <label for="userName" class = "title">Choose a User name:</label>
             <input type="text" id="userName" name="userName">
             <input type="submit" value="start the game" id="userButton">
         </form>
     </section>
-    <section  class = "ocultar"></section>
+    <section  id = "page2" class = "ocultar">
+        <button id = "startButton" value = "start the game!"></button>
+    </section>
     
 </body>
 </html>

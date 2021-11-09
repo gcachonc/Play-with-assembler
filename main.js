@@ -23,11 +23,19 @@ window.onload = function() {
     user4.innerHTML = user.username[i - 3];
     score4.innerHTML = user.score[i - 3];
 
+
 }
 
 const userButton = document.getElementById("userButton");
 userButton.addEventListener("click", guardarUsuario);
 
 function guardarUsuario(){
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("page2");
+
     user.username.push(document.getElementById("userName").value);
+    page1.className = "ocultar";
+    page2.className = "mostrar";
+    console.log(user.username);
+
 }
