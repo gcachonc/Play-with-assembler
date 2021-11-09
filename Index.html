@@ -9,27 +9,35 @@
 </head>
 <body>
     <header></header>
-    <div class = "scoreResults">
-        <h1>Last Scores</h1>
-        <h2 id = "user1"></h2>
-        <p id = "score1"></p>
-        <h2 id = "user2"></h2>
-        <p id = "score2"></p>
-        <h2 id = "user3"></h2>
-        <p id = "score3"></p>
-        <h2 id = "user4"></h2>
-        <p id = "score4"></p>
+    <div id="right">
+        <section id = "page1" class = "mostrar">
+            <h1>Username</h1>
+            <input id="txtName" placeholder="Enter your username">
+            <button id = "userButton">Next</button>
+            
+          </section>
+          <section  id = "page2" class = "ocultar">
+            <div id="response"></div>
+            <h5>The Game Rules</h5>
+            <button id = "startButton">Start Game</button>
+          </section>
     </div>
-    <section id = "page1" class = "mostrar">
-        <form action="" onsubmit="event.preventDefault()" class = "startPage">
-            <label for="userName" class = "title">Choose a User name:</label>
-            <input type="text" id="userName" name="userName">
-            <input type="submit" value="start the game" id="userButton">
-        </form>
+    <section id ="page3" class = "ocultar">
+
     </section>
-    <section  id = "page2" class = "ocultar">
-        <button id = "startButton" value = "start the game!"></button>
-    </section>
-    
+    <div id="left">
+        <h1 style="font-size: 30px; background: black;">Last Scores</h1>
+        <div class = "scoreResults">
+            <h2 id = "user1"></h2>
+            <p id = "score1"></p>
+            <h2 id = "user2"></h2>
+            <p id = "score2"></p>
+            <h2 id = "user3"></h2>
+            <p id = "score3"></p>
+            <h2 id = "user4"></h2>
+            <p id = "score4"></p>
+        </div>
+     </div>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 var user = {
-    username: ["gon", "mark", "john", "gonzalo"],
+    username: ["Luis", "Marcel", "Juan", "Gonzalo"],
     score: ["28", "23", "25", "33"]
 }
 
@@ -32,10 +32,25 @@ userButton.addEventListener("click", guardarUsuario);
 function guardarUsuario(){
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
+    var userName = document.querySelector("#txtName").value;
 
-    user.username.push(document.getElementById("userName").value);
+    user.username.push(document.getElementById("txtName").value);
     page1.className = "ocultar";
     page2.className = "mostrar";
     console.log(user.username);
+    document.querySelector("#response").innerHTML = "Hello 👋 " +  userName +" these are the rules... ";
 
 }
+
+const startButton = document.getElementById("startButton");
+startButton.addEventListener("click", startGame);
+
+function startGame(){
+    const page2 = document.getElementById("page2");
+    const page3 = document.getElementById("page3");
+
+    page2.className = "ocultar";
+    page3.className = "mostrar";
+
+}
+
