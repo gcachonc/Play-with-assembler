@@ -1,5 +1,5 @@
 var user = {
-    username: ["gon", "mark", "john", "gonzalo"],
+    username: ["Luis", "Marcel", "Juan", "Gonzalo"],
     score: ["28", "23", "25", "33"]
 }
 
@@ -31,3 +31,8 @@ userButton.addEventListener("click", guardarUsuario);
 function guardarUsuario(){
     user.username.push(document.getElementById("userName").value);
 }
+
+function next() {
+    var userName = document.querySelector("#txtName").value;
+    document.querySelector("#response").innerHTML = "Hello 👋 " +  userName +" these are the rules... ";
+  }
