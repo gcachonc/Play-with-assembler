@@ -1,6 +1,6 @@
 var user = {
     username: ["Luis", "Marcel", "Juan", "Gonzalo"],
-    score: ["28", "23", "25", "33"]
+    score: ["2.831", "2.397", "2.627", "3.333"]
 }
 var startTime = "";
 var finishTime = "";
@@ -10,7 +10,7 @@ let json = [];
 window.onload = function() {
     if (localStorage.getItem("historic") !== null) {
         user = JSON.parse(localStorage.getItem("historic"));
-      }
+    }
     var user1 = document.getElementById("user1");
     var score1 = document.getElementById("score1");
     var user2 = document.getElementById("user2");
@@ -20,17 +20,11 @@ window.onload = function() {
     var user4 = document.getElementById("user4");
     var score4 = document.getElementById("score4");
     var i = user.username.length - 1;
-
+    /* put the reflex button in a random position*/
         var img = document.getElementById ("page4");
                 img.setAttribute("style", "position:absolute;");
                 document.body.appendChild(img);
-                var xy = getRandomPosition(img);
-                // if (xy[0] < 85){
-                //     img.style.top = xy[0] + 'vh';
-                // }
-                // else{
-                //     img.style.top = 85 + 'vh';
-                // }
+                var xy = getRandomPosition();
                 img.style.top = xy[0] + 'vh';
                 img.style.left = xy[1] + 'vh';
 
@@ -42,10 +36,8 @@ window.onload = function() {
     score3.innerHTML = user.score[i - 2];
     user4.innerHTML = user.username[i - 3];
     score4.innerHTML = user.score[i - 3];
-
-
-
 }
+/* change the pages in the game*/ 
 
 const userButton = document.getElementById("userButton");
 userButton.addEventListener("click", guardarUsuario);
@@ -54,7 +46,10 @@ var userName = "";
 function guardarUsuario(){
     const page1 = document.getElementById("page1");
     const page2 = document.getElementById("page2");
-     userName = document.querySelector("#txtName").value;
+    userName = document.querySelector("#txtName").value;
+    if (userName == ""){
+        return;
+    }
 
     user.username.push(document.getElementById("txtName").value);
     page1.className = "ocultar";
@@ -70,6 +65,7 @@ startButton.addEventListener("click", startGame);
 function startGame(){
     const page2 = document.getElementById("page2");
     const page3 = document.getElementById("page3");
+
     page2.className = "ocultar";
     page3.className = "mostrar";
     let randomTime = getRandomTime(1, 2);
@@ -87,7 +83,7 @@ function finishButton(time){
     timeout = setTimeout(function() {
         const page3 = document.getElementById("page3");
         const page4 = document.getElementById("page4");
-        
+
         page3.className = "ocultar";
         page4.className = "mostrar";
         left.className = "ocultar";
@@ -112,10 +108,6 @@ function launchGame(){
     var st = s1 + "." + s2;
     score = (parseFloat(ft) - parseFloat(st)).toFixed(3);
     document.querySelector("#Time").innerHTML = userName + " ,your time is... " + score;
-    console.log(ft);
-    console.log(st);
-    console.log(score);
-
 }
 
 
@@ -125,16 +117,16 @@ function getRandomTime(min, max){
     let result = Math.floor((Math.random() * max) + min);
     result = result * 1000;
     return result;
-    
 }
-
-function getRandomPosition(element) {
-	// var x = document.body.offsetHeight-element.clientHeight;
-	// var y = document.body.offsetWidth-element.clientWidth;
+/* get random  coordinates for the reflex button */
+function getRandomPosition() {
 	var randomX = Math.floor(Math.random()*82);
 	var randomY = Math.floor(Math.random()*100);
 	return [randomX,randomY];
 }
+
+/* store the value in localstorage of the user and the score*/
+
 const playAgain = document.getElementById("playAgain");
 playAgain.addEventListener("click", addUsers);
 
