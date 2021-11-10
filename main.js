@@ -5,8 +5,12 @@ var user = {
 var startTime = "";
 var finishTime = "";
 var score = "";
+let json = [];
 
 window.onload = function() {
+    if (localStorage.getItem("historic") !== null) {
+        user = JSON.parse(localStorage.getItem("historic"));
+      }
     var user1 = document.getElementById("user1");
     var score1 = document.getElementById("score1");
     var user2 = document.getElementById("user2");
@@ -21,8 +25,14 @@ window.onload = function() {
                 img.setAttribute("style", "position:absolute;");
                 document.body.appendChild(img);
                 var xy = getRandomPosition(img);
-                img.style.top = xy[0] + '%';
-                img.style.left = xy[1] + '%';
+                // if (xy[0] < 85){
+                //     img.style.top = xy[0] + 'vh';
+                // }
+                // else{
+                //     img.style.top = 85 + 'vh';
+                // }
+                img.style.top = xy[0] + 'vh';
+                img.style.left = xy[1] + 'vh';
 
     user1.innerHTML = user.username[i];
     score1.innerHTML = user.score[i];
@@ -62,7 +72,7 @@ function startGame(){
     const page3 = document.getElementById("page3");
     page2.className = "ocultar";
     page3.className = "mostrar";
-    let randomTime = getRandomTime(1, 10);
+    let randomTime = getRandomTime(1, 2);
     finishButton(randomTime);
 
 }
@@ -121,10 +131,19 @@ function getRandomTime(min, max){
 function getRandomPosition(element) {
 	// var x = document.body.offsetHeight-element.clientHeight;
 	// var y = document.body.offsetWidth-element.clientWidth;
-	var randomX = Math.floor(Math.random()*100);
+	var randomX = Math.floor(Math.random()*82);
 	var randomY = Math.floor(Math.random()*100);
 	return [randomX,randomY];
 }
+const playAgain = document.getElementById("playAgain");
+playAgain.addEventListener("click", addUsers);
 
+function addUsers(){
+    user.score.push(score);
+    json = JSON.stringify(user);
+    localStorage.setItem("historic",JSON.stringify(user));
+    console.log(json);
+    location.reload();
+}
 
 
