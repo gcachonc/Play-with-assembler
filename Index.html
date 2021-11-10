@@ -5,16 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header></header>
-    <section class = "mostrar">
-        <form action="" onsubmit="e.preventDefault()" class = "startPage">
-            <label for="userName" class = "title">Choose a User name:</label>
-            <input type="text" id="userName" name="userName">
-            <input type="submit" value="start the game" id="startButton">
-        </form>
-    </section>
+    <div id="right">
+        <section class = "mostrar">
+            <h1>Username</h1>
+            <input id="txtName" placeholder="Enter your username" />
+            <br/>
+            <button onclick="next();  showMy();">Next</button>
+            <div id="response">
+            
+          </section>
+          <section  class = "ocultar">
+            <h5>The Game Rules</h5>
+            </label><button >Start Game</button>
+          </section>
+    </div>
     
+    <div id="left">
+        <h1 style="font-size: 30px; background: black;">Last Scores</h1>
+        <div class = "scoreResults">
+            <h2 id = "user1"></h2>
+            <p id = "score1"></p>
+            <h2 id = "user2"></h2>
+            <p id = "score2"></p>
+            <h2 id = "user3"></h2>
+            <p id = "score3"></p>
+            <h2 id = "user4"></h2>
+            <p id = "score4"></p>
+        </div>
+     </div>
+
 </body>
 </html>
