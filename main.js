@@ -25,8 +25,8 @@ window.onload = function() {
                 img.setAttribute("style", "position:absolute;");
                 document.body.appendChild(img);
                 var xy = getRandomPosition();
-                img.style.top = xy[0] + 'vh';
-                img.style.left = xy[1] + 'vh';
+                img.style.top = xy[0] + '%';
+                img.style.left = xy[1] + '%';
 
     user1.innerHTML = user.username[i];
     score1.innerHTML = user.score[i];
@@ -120,8 +120,8 @@ function getRandomTime(min, max){
 }
 /* get random  coordinates for the reflex button */
 function getRandomPosition() {
-	var randomX = Math.floor(Math.random()*82);
-	var randomY = Math.floor(Math.random()*100);
+	var randomX = Math.floor(Math.random()*60);
+	var randomY = Math.floor(Math.random()*50);
 	return [randomX,randomY];
 }
 
