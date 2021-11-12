@@ -21,12 +21,12 @@ window.onload = function() {
     var score4 = document.getElementById("score4");
     var i = user.username.length - 1;
     /* put the reflex button in a random position*/
-        var img = document.getElementById ("page4");
-                img.setAttribute("style", "position:absolute;");
-                document.body.appendChild(img);
-                var xy = getRandomPosition();
-                img.style.top = xy[0] + '%';
-                img.style.left = xy[1] + '%';
+        // var img = document.getElementById ("page4");
+        //         img.setAttribute("style", "position:absolute;");
+        //         document.body.appendChild(img);
+        //         var xy = getRandomPosition();
+        //         img.style.top = xy[0] + '%';
+        //         img.style.left = xy[1] + '%';
 
     user1.innerHTML = user.username[i];
     score1.innerHTML = user.score[i];
@@ -89,7 +89,17 @@ function finishButton(time){
         page4.className = "mostrar";
         left.className = "ocultar";
         startTime = new Date;
+        buttonPosition();
+        var interval = window.setInterval(buttonPosition, 1000);
     }, time);
+}
+function buttonPosition(){
+    var img = document.getElementById ("page4");
+                img.setAttribute("style", "position:absolute;");
+                document.body.appendChild(img);
+                var xy = getRandomPosition();
+                img.style.top = xy[0] + '%';
+                img.style.left = xy[1] + '%';
 }
 
 function launchGame(){
