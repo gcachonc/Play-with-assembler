@@ -61,7 +61,7 @@ function startGame(){
 
     page2.className = "ocultar";
     page3.className = "mostrar";
-    let randomTime = getRandomTime(1, 2);
+    let randomTime = getRandomTime(1, 5);
     finishButton(randomTime);
     document.querySelector("#FingerText").innerHTML = "‼️" +  userName + "‼️";
 
