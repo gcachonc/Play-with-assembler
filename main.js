@@ -70,6 +70,7 @@ function startGame(){
     page3.className = "mostrar";
     let randomTime = getRandomTime(1, 2);
     finishButton(randomTime);
+    document.querySelector("#FingerText").innerHTML = "‼️" +  userName + "‼️";
 
 }
 
