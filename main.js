@@ -20,14 +20,7 @@ window.onload = function() {
     var user4 = document.getElementById("user4");
     var score4 = document.getElementById("score4");
     var i = user.username.length - 1;
-    /* put the reflex button in a random position*/
-        // var img = document.getElementById ("page4");
-        //         img.setAttribute("style", "position:absolute;");
-        //         document.body.appendChild(img);
-        //         var xy = getRandomPosition();
-        //         img.style.top = xy[0] + '%';
-        //         img.style.left = xy[1] + '%';
-
+    
     user1.innerHTML = user.username[i];
     score1.innerHTML = user.score[i];
     user2.innerHTML = user.username[i - 1];
@@ -88,7 +81,7 @@ function finishButton(time){
         page3.className = "ocultar";
         page4.className = "mostrar";
         left.className = "ocultar";
-        startTime = new Date;
+        startTime = Date.now();
         buttonPosition();
         var interval = window.setInterval(buttonPosition, 1000);
     }, time);
@@ -110,14 +103,13 @@ function launchGame(){
     page4.className = "ocultar";
     page5.className = "mostrar";
     left.className = "mostrar";
-    finishTime = new Date;
-    var f1 = finishTime.getSeconds();
-    var f2 = finishTime.getMilliseconds();
-    var ft = f1 + "." + f2;
-    var s1 = startTime.getSeconds();
-    var s2 = startTime.getMilliseconds();
-    var st = s1 + "." + s2;
+    finishTime = Date.now();
+    var ft = finishTime / 1000;
+    var st = startTime / 1000;
+    console.log(ft);
+    console.log(st);
     score = (parseFloat(ft) - parseFloat(st)).toFixed(3);
+    console.log(score);
     document.querySelector("#Time").innerHTML = userName + " ,your time is... " + score;
 }
 
